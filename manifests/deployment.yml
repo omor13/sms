@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k1-d6fb"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k1-d6fb"
+  template:
+    metadata:
+      labels:
+        app: "k1-d6fb"
+    spec:
+      containers:
+        - name: "k1-d6fb"
+          image: "smsphp.azurecr.io/k1"
+          ports:
+          - containerPort: 80
